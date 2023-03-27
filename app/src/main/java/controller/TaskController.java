@@ -41,7 +41,7 @@ public class TaskController {
             statement.execute();
             
         } catch (Exception e) {
-            throw new RuntimeException("Erro ao salvar a tarefa" + e.getMessage(), e);
+            throw new RuntimeException("Erro ao inserir a tarefa" + e.getMessage(), e);
         } finally {
             ConnectionFactory.closeConnection(connection, statement);
         }
