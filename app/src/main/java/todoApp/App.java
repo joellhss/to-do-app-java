@@ -3,17 +3,26 @@
  */
 package todoApp;
 
+import controller.ProjectController;
 import java.sql.Connection;
+import model.Project;
 import util.ConnectionFactory;
 
 public class App {
 
     public static void main(String[] args) {
         
-        Connection c = ConnectionFactory.getConnection();
-        System.out.println(c);
+//        Connection c = ConnectionFactory.getConnection();
+//        System.out.println(c);
+//        
+//        ConnectionFactory.closeConnection(c);
+
+        Project project = new Project();
+        project.setName("Teste1");
+        project.setDescription("Teste 1 desc");
         
-        ConnectionFactory.closeConnection(c);
-        
+        ProjectController controller = new ProjectController();
+        controller.save(project);
+
     }
 }
